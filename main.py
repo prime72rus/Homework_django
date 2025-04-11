@@ -2,20 +2,20 @@ from src.http_server import MyServer
 from http.server import HTTPServer
 
 
-def main():
+def main() -> None:
 
-    hostName = "localhost"
-    serverPort = 8080
+    hostname = "localhost"
+    serverport = 8080
 
-    webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Server started http://%s:%s" % (hostName, serverPort))
+    webserver = HTTPServer((hostname, serverport), MyServer)
+    print("Server started http://%s:%s" % (hostname, serverport))
 
     try:
-        webServer.serve_forever()
+        webserver.serve_forever()
     except KeyboardInterrupt:
         pass
 
-    webServer.server_close()
+    webserver.server_close()
     print("Server stopped.")
 
 
